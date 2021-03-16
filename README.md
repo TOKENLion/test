@@ -4,11 +4,14 @@
 
 ## Instalation
 - Install the dependencies with [Composer](https://getcomposer.org/download/ "Composer").
+
 \# cd in your project directory
 > composer install
+>
 > composer dumpautoload -o
 
 - Define your environment file, at the root of your project directory.
+
 \# Copy the environment template and edit then the .env file to suit your needs (APP_*, DB_*, …).
 > cp .env.example .env
 
@@ -20,6 +23,7 @@
 
 - Finish by clearing the config and generate the cache.
 > php artisan config:clear
+>
 > php artisan config:cache
 
 - If you have PHP installed locally and you would like to use PHP's built-in development server to serve your application, you may use the serve Artisan command. This command will start a development server at http://localhost:8000
@@ -37,7 +41,9 @@ If the configurations from the Env file are set correctly, and there is connecti
 
 - To introduce the data in the table "exchange rates" which will be taken from the source indicated in the task, will be needed to run the command:
 > php artisan curl:getRate
+>
 > or
+>
 > php artisan curl:getRate 15.03.2021
 >
 > \# Where the parameter "date|format - d.m.Y" isn't mandatory, but can be written in order to take the data for a specific date. If this parameter is not indicated, the implicit data set on the server will be taken.
