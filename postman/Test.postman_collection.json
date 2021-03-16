@@ -1,0 +1,140 @@
+{
+	"info": {
+		"_postman_id": "b84e5b4a-deb4-4a6c-ba96-b8f685d9d3d7",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Exchange Rates",
+			"item": [
+				{
+					"name": "All by current date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/exchange-rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"exchange-rate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All by specific date",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost/api/exchange-rate?date=15.03.2021",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"exchange-rate"
+									],
+									"query": [
+										{
+											"key": "date",
+											"value": "15.03.2021"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Adding 1 record",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"currencyCode\":\"EUR\",\"ammount\":\"1\",\"value\":\"1.23\",\"date\":\"2021-03-14\"}"
+						},
+						"url": {
+							"raw": "http://localhost/api/exchange-rate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"exchange-rate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Adding multiple records",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[{\"currencyCode\":\"EUR\",\"ammount\":\"1\",\"value\":\"21.1468\",\"date\":\"2021-03-15\"},{\"currencyCode\":\"USD\",\"ammount\":\"1\",\"value\":\"17.7451\",\"date\":\"2021-03-15\"},{\"currencyCode\":\"RUB\",\"ammount\":\"1\",\"value\":\"0.2408\",\"date\":\"2021-03-15\"}]"
+								},
+								"url": {
+									"raw": "http://localhost/api/exchange-rate",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"api",
+										"exchange-rate"
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ExchangeEntity",
+			"item": [
+				{
+					"name": "Adding",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"currencyCode\":\"EUR\", \"value\":\"21.15\", \"recvAmount\": 100, \"FinalValue\":\"(100*21.15)\", \"user\":\"user1\"}"
+						},
+						"url": {
+							"raw": "http://localhost/api/exchange-entity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"exchange-entity"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
